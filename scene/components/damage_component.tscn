@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dxej1yh3atpgi"]
+
+[ext_resource type="Script" uid="uid://dfv6yb8bfsnb2" path="res://scene/components/damage_component.gd" id="1_uq4o1"]
+
+[node name="DamageComponent" type="Node2D"]
+position = Vector2(-1, 0)
+script = ExtResource("1_uq4o1")
+max_damage = 3
