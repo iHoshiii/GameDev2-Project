@@ -1,0 +1,33 @@
+[gd_scene load_steps=2 format=4 uid="uid://dxktkfh6m05y1"]
+
+[ext_resource type="TileSet" uid="uid://op1u58d7iur3" path="res://Tilesets/house_tile_sets.tres" id="1_4qo0w"]
+
+[node name="LargeHouse" type="Node2D"]
+
+[node name="HouseTileMap" type="Node2D" parent="."]
+
+[node name="Floor" type="TileMapLayer" parent="HouseTileMap"]
+texture_filter = 1
+tile_map_data = PackedByteArray("AAADAP//AAABAAEAAAACAP//AAABAAEAAAACAP7/AAABAAEAAAABAP3/AAABAAEAAAABAP7/AAABAAEAAAAAAP7/AAABAAEAAAAAAP3/AAABAAEAAAAAAPz/AAABAAEAAAAAAPv/AAABAAEAAAAGAP7/AAABAAEAAAAGAP//AAABAAEAAAAFAP//AAABAAEAAAAEAP//AAABAAEAAAAFAP7/AAABAAEAAAAEAP7/AAABAAEAAAADAP7/AAABAAEAAAACAP3/AAABAAEAAAACAPz/AAABAAEAAAADAPz/AAABAAEAAAADAPv/AAABAAEAAAACAPv/AAABAAEAAAABAPv/AAABAAEAAAABAPz/AAABAAEAAAAEAPz/AAABAAEAAAAFAPz/AAABAAEAAAAGAPz/AAABAAEAAAAGAP3/AAABAAEAAAAFAP3/AAABAAEAAAAEAP3/AAABAAEAAAADAP3/AAABAAEAAAAEAPv/AAABAAEAAAAGAPv/AAABAAEAAAAAAP//AAABAAEAAAABAP//AAABAAEAAAAFAPv/AAABAAEAAAA=")
+tile_set = ExtResource("1_4qo0w")
+
+[node name="Walls" type="TileMapLayer" parent="HouseTileMap"]
+texture_filter = 1
+tile_map_data = PackedByteArray("AAAFAPv/AgAAAAAAAQA=")
+tile_set = ExtResource("1_4qo0w")
+
+[node name="Furniture" type="TileMapLayer" parent="HouseTileMap"]
+texture_filter = 1
+tile_map_data = PackedByteArray("AAAAAPv/AAABAAAAAAABAPv/AAADAAIAAAACAPv/AAABAAAAAAADAPv/AAADAAIAAAAEAPv/AAABAAAAAAAGAPv/AAABAAAAAAAHAPv/AAACAAAAAAD///v/AAAAAAAAAAD/////AAAAAAEAAAAHAP//AAACAAIAAAAAAP//AAABAAIAAAABAP//AAADAAIAAAACAP//AAABAAIAAAADAP//AAADAAIAAAAEAP//AAABAAIAAAAFAP//AAADAAIAAAAGAP//AAABAAIAAAD///z/AAAAAAEAAAD///3/AAAAAAEAAAD///7/AAAAAAEAAAAHAPz/AAACAAEAAAAHAP3/AAACAAEAAAAHAP7/AAACAAEAAAA=")
+tile_set = ExtResource("1_4qo0w")
+
+[node name="FurnitureTop" type="TileMapLayer" parent="HouseTileMap"]
+texture_filter = 1
+tile_map_data = PackedByteArray("AAACAPv/AQAHAAMAAAAAAPz/AQACAAEAAAAAAPv/AQABAAAAAAAGAPv/AQABAAAAAAADAP7/AQADAAMAAAACAP7/AQAEAAIAAAAEAP7/AQAFAAIAAAAAAP7/AQAEAAMAAAABAPz/AQAEAAMAAAA=")
+tile_set = ExtResource("1_4qo0w")
+
+[node name="FurnitureTop2" type="TileMapLayer" parent="HouseTileMap"]
+texture_filter = 1
+position = Vector2(0, -3)
+tile_map_data = PackedByteArray("AAAFAPz/AQABAAUAAAABAPz/AQAFAAEAAAA=")
+tile_set = ExtResource("1_4qo0w")

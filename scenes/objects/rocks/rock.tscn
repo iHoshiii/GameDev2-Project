@@ -1,0 +1,54 @@
+[gd_scene load_steps=12 format=3 uid="uid://1n30c6e4e3ta"]
+
+[ext_resource type="Shader" uid="uid://y4ivj5khgl21" path="res://scenes/objects/rocks/rock.gdshader" id="1_8i8v8"]
+[ext_resource type="Texture2D" uid="uid://n7t418gu7wj5" path="res://assets/game/Objects/Basic Grass Biom things 1.png" id="2_cspju"]
+[ext_resource type="Script" uid="uid://s1m8i4rius0d" path="res://scenes/objects/rocks/rock.gd" id="2_f5itc"]
+[ext_resource type="Shader" uid="uid://chqppxlj4c0kb" path="res://scenes/objects/trees/small_tree_shake.gdshader" id="4_bntui"]
+[ext_resource type="PackedScene" uid="uid://bl7y1cmms0gas" path="res://scenes/components/hurt_component.tscn" id="4_fob2m"]
+[ext_resource type="PackedScene" uid="uid://be0nrke5b0fan" path="res://scenes/components/damage_component.tscn" id="5_yrcuq"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wj66e"]
+resource_local_to_scene = true
+shader = ExtResource("1_8i8v8")
+shader_parameter/shake_intensity = 0.0
+shader_parameter/shake_speed = 20.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xyb6m"]
+atlas = ExtResource("2_cspju")
+region = Rect2(128, 18, 16, 12)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_au4vd"]
+radius = 4.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8i8v8"]
+shader = ExtResource("4_bntui")
+shader_parameter/shake_intensity = 0.0
+shader_parameter/shake_speed = 20.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w057i"]
+size = Vector2(12, 10.5)
+
+[node name="Rock" type="Sprite2D"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_wj66e")
+position = Vector2(0, -5)
+texture = SubResource("AtlasTexture_xyb6m")
+script = ExtResource("2_f5itc")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_au4vd")
+
+[node name="HurtComponent" parent="." instance=ExtResource("4_fob2m")]
+collision_layer = 1
+collision_mask = 1
+
+[node name="HurtComponentCollisionShape2D" type="CollisionShape2D" parent="HurtComponent"]
+material = SubResource("ShaderMaterial_8i8v8")
+position = Vector2(0, 0.25)
+shape = SubResource("RectangleShape2D_w057i")
+debug_color = Color(0.8013188, 0.24286675, 0.84573156, 0.41960785)
+
+[node name="DamageComponent" parent="." instance=ExtResource("5_yrcuq")]
